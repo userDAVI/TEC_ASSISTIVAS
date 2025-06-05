@@ -24,16 +24,6 @@ void loop() {
   Serial.print(" ");
   Serial.println(AccZ);*/
 
-  if(AccX > 0){
-    int i;
-    for(i=0 ; i<100 ; i++){
-      digitalWrite(buzzer, HIGH);
-      delay(10);
-      digitalWrite(buzzer, LOW);
-      delay(10);
-    }
-    
-  }
 
   delay(100);
   
