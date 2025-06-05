@@ -19,10 +19,10 @@ void loop() {
   requisicao();
   
   Serial.println(AccX);
- /* Serial.print(" ");
+  Serial.print(" ");
   Serial.print(AccY);
   Serial.print(" ");
-  Serial.println(AccZ);*/
+  Serial.println(AccZ);
 
 
   delay(100);
