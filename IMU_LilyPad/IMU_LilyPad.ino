@@ -68,7 +68,7 @@ void configuracao(){
   */
   Wire.beginTransmission(MPU);
   Wire.write(0x1C);           //posição de memória responsával pelo ajuste de fundo de escala do acelerômetro
-  Wire.write(0b00011000);     // Trocar esse comando para fundo de escala desejado conforme acima
+  Wire.write(0b00000000);     // Trocar esse comando para fundo de escala desejado conforme acima
   Wire.endTransmission();
 }
 
@@ -90,4 +90,14 @@ void requisicao(){
   GyrX = Wire.read() << 8 | Wire.read(); //0x43 (GYRO_XOUT_H) & 0x44 (GYRO_XOUT_L)
   GyrY = Wire.read() << 8 | Wire.read(); //0x45 (GYRO_YOUT_H) & 0x46 (GYRO_YOUT_L)
   GyrZ = Wire.read() << 8 | Wire.read(); //0x47 (GYRO_ZOUT_H) & 0x48 (GYRO_ZOUT_L)
+
+
+   // transformação da binário em aceleração
+
+  AccX = AccX/16384.0;
+  AccY = AccY/16384.0;
+  AccZ = AccZ/16384.0;
+  GyrX = GyrX/131.0;
+  GyrY = GyrY/131.0;
+  GyrZ = GyrZ/131.0;
 }
