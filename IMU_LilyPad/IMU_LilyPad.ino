@@ -18,7 +18,7 @@ void loop() {
 
   requisicao();
   
-  Serial.println(AccX);
+  Serial.print(AccX);
   Serial.print(" ");
   Serial.print(AccY);
   Serial.print(" ");
